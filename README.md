@@ -113,12 +113,5 @@ void loop()
   }
 }
 
-
-
-
-
-
-
-
-### RESULTS: 
+## RESULT 
 Arduino uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
