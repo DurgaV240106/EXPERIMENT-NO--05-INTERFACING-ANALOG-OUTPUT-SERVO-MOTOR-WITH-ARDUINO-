@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE:18-03-2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: DURGA V
+###  ROLL NO :212223230052
+###  DEPARTMENT: AI&DS
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -45,7 +45,8 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 ### Figure-03 SERVO MOTOR OVERVIEW 
 
- 
+ ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
+
 
 
  
@@ -56,10 +57,15 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 CIRCUIT DIAGRAM
  
- 
- ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
+ ![Screenshot 2024-03-18 133348](https://github.com/DurgaV240106/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144870878/905cb208-8aec-402d-beec-ecb959866589)
 
-### FIGURE 04 CIRCUIT DIAGRAM
+## SCHEMATIC REPRESENTATION
+
+![Screenshot 2024-03-18 133711](https://github.com/DurgaV240106/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144870878/d54734b3-d684-4a5b-9627-158e4a2b99ab)
+
+## GRAPH
+
+![Screenshot 2024-03-14 114433](https://github.com/DurgaV240106/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144870878/a20312d1-fe74-46c9-ac60-b79d632b600d)
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -75,7 +81,36 @@ CIRCUIT DIAGRAM
 
 ### PROGRAM :
  
+```
+#include<Servo.h>
+Servo myservo;
+int pos=0;
+void setup()
+{
+  myservo.attach(9);
+  Serial.begin(9600);
 
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos+=1)
+  {
+    myservo.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    
+    
+  }
+  for(pos=180;pos>=0;pos-=1)
+  {
+    myservo.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+  }
+}
 
 
 
